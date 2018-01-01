@@ -23,11 +23,12 @@
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id, id: :purchase_category_id %>
+ 	<%= form.collection_select :category_id, Category.all, :id, :name, :prompt => "Select a Category" %>
   </div>
 
   <div class="field">
     <%= form.label :shop_id %>
+ 	<%= form.collection_select :shop_id, Shop.all, :id, :name, :prompt => "Select a Shop" %>
     <%= form.text_field :shop_id, id: :purchase_shop_id %>
   </div>
 
@@ -48,7 +49,7 @@
 
   <div class="field">
     <%= form.label :denomination_id %>
-    <%= form.text_field :denomination_id, id: :purchase_denomination_id %>
+ 	<%= form.collection_select :denomination_id, Denomination.all, :id, :name, :prompt => "Select a Denomination" %>
   </div>
 
   <div class="field">

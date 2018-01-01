@@ -23,12 +23,12 @@
       <tr>
         <td><%= purchase.common_name %></td>
         <td><%= purchase.specific_name %></td>
-        <td><%= purchase.category %></td>
-        <td><%= purchase.shop %></td>
+        <td><%= purchase.category.name %></td>
+        <td><%= purchase.shop.name %></td>
         <td><%= purchase.price %></td>
         <td><%= purchase.quantity %></td>
         <td><%= purchase.subquantity %></td>
-        <td><%= purchase.denomination %></td>
+        <td><%= purchase.denomination.name %></td>
         <td><%= purchase.is_sale %></td>
         <td><%= link_to 'Show', purchase %></td>
         <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
