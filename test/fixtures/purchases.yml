@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  common_name: MyString
+  specific_name: MyString
+  category: one
+  shop: one
+  price: 9.99
+  quantity: 9.99
+  subquantity: 9.99
+  denomination: one
+  is_sale: false
+
+two:
+  common_name: MyString
+  specific_name: MyString
+  category: two
+  shop: two
+  price: 9.99
+  quantity: 9.99
+  subquantity: 9.99
+  denomination: two
+  is_sale: false

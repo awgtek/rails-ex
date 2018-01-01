@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :purchases
+  resources :shops
+  resources :categories
   resources :denominations
   get 'welcome/index'
   root 'welcome#index'

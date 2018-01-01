@@ -10,24 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103113002) do
+ActiveRecord::Schema.define(version: 20180101002905) do
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string   "commenter"
-    t.text     "body"
-    t.integer  "article_id"
-    t.integer  "category_id"
+    t.string "commenter"
+    t.text "body"
+    t.integer "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
-    t.index ["category_id"], name: "index_comments_on_category_id"
+  end
+
+  create_table "denominations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.string "common_name"
+    t.string "specific_name"
+    t.integer "category_id"
+    t.integer "shop_id"
+    t.decimal "price"
+    t.decimal "quantity"
+    t.decimal "subquantity"
+    t.integer "denomination_id"
+    t.boolean "is_sale"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_purchases_on_category_id"
+    t.index ["denomination_id"], name: "index_purchases_on_denomination_id"
+    t.index ["shop_id"], name: "index_purchases_on_shop_id"
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
