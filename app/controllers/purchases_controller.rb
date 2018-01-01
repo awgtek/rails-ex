@@ -5,6 +5,11 @@ class PurchasesController < ApplicationController
   # GET /purchases.json
   def index
     @purchases = Purchase.all
+	respond_to do |format|
+	  format.html
+	  format.json
+	  format.csv { render plain: @purchases.to_csv }
+	end
   end
 
   # GET /purchases/1
