@@ -14,6 +14,7 @@
       <th>Subquantity</th>
       <th>Denomination</th>
       <th>Is sale</th>
+	  <th>created at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,6 +31,7 @@
         <td><%= purchase.subquantity %></td>
         <td><%= purchase.denomination.name %></td>
         <td><%= purchase.is_sale %></td>
+        <td><%= purchase.created_at %></td>
         <td><%= link_to 'Show', purchase %></td>
         <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
         <td><%= link_to 'Destroy', purchase, method: :delete, data: { confirm: 'Are you sure?' } %></td>

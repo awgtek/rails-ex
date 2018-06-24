@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
   # GET /purchases
   # GET /purchases.json
   def index
-    @purchases = Purchase.all
+    @purchases = Purchase.order(created_at: :desc)
 	respond_to do |format|
 	  format.html
 	  format.json
